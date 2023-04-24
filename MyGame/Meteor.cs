@@ -6,7 +6,7 @@ namespace MyGame
 {
     internal class Meteor : GameObject
     {
-        private const float Speed = 0.5f;
+        private const float Speed = 0.25f;
 
         private readonly Sprite _sprite = new Sprite();
 
@@ -33,7 +33,7 @@ namespace MyGame
             }
             else
             {
-                _sprite.Position = new Vector2f(pos.X + Speed * msElapsed, pos.Y);
+                _sprite.Position = new Vector2f(pos.X - Speed * msElapsed, pos.Y);
             }
         }
 
@@ -47,7 +47,14 @@ namespace MyGame
             if (otherGameObject.HasTag("laser"))
             {
                 otherGameObject.MakeDead();
+                GameScene scene = (GameScene)Game.CurrentScene;
+                scene.IncreaseScore();
             }
+            Vector2f pos = _sprite.Position;
+            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 2.0f;
+            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 2.0f;
+            Explosion explosion = new Explosion(pos);
+            Game.CurrentScene.AddGameObject(explosion);
             MakeDead();
         }
     }
