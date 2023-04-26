@@ -6,7 +6,7 @@ namespace MyGame
 {
     internal class Meteor : GameObject
     {
-        private const float Speed = 0.25f;
+        private const float Speed = 0.17f;
 
         private readonly Sprite _sprite = new Sprite();
 
@@ -29,6 +29,9 @@ namespace MyGame
             Vector2f pos = _sprite.Position;
             if (pos.X < _sprite.GetGlobalBounds().Width * -1)
             {
+                GameScene scene = (GameScene)Game.CurrentScene;
+                scene.DecreaseLives();
+
                 MakeDead();
             }
             else
