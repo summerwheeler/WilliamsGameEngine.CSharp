@@ -6,7 +6,7 @@ namespace MyGame
 {
     internal class Meteor : GameObject
     {
-        private const float Speed = 0.17f;
+        private const float Speed = 0.3f;
 
         private readonly Sprite _sprite = new Sprite();
 

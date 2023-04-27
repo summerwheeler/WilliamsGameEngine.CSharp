@@ -12,7 +12,7 @@ namespace MyGame
 {
     internal class ScrollingBackground : GameObject
     {
-        private const float Speed = 0.25f;
+        private const float Speed = 1.0f;
 
         private readonly Sprite _sprite1 = new Sprite();
         private readonly Sprite _sprite2 = new Sprite();

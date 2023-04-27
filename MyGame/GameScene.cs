@@ -5,7 +5,7 @@ namespace MyGame
 {
     class GameScene : Scene
     {
-        private int _lives = 1000;
+        private int _lives = 5;
         private int _score;
         public GameScene()
         {
