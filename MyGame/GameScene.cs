@@ -1,12 +1,11 @@
 ﻿using GameEngine;
-using MyGame.Resources;
 using SFML.System;
 
 namespace MyGame
 {
     class GameScene : Scene
     {
-        private int _lives = 3;
+        private int _lives = 1000;
         private int _score;
         public GameScene()
         {
